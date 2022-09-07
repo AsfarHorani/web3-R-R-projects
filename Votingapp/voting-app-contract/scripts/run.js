@@ -18,6 +18,9 @@ async function main() {
   console.log("VostingSys deployed to:", vostingSys.address);
   let txn = await vostingSys.getAllMovies();
   console.log("all movies: "+JSON.stringify(txn));
+  txn = await vostingSys.vote(1);
+  // txn = await txn.wait();
+  console.log(await txn.wait());
 }
 
 main()
